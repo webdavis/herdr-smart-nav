@@ -1,6 +1,6 @@
 use std::env;
 
-use herdr_smart_nav_adapters::Herdr;
+use herdr_smart_nav_adapters::HerdrCli;
 use herdr_smart_nav_application::navigate;
 use herdr_smart_nav_domain::Direction;
 
@@ -24,7 +24,6 @@ fn main() {
         env::var("HERDR_ACTIVE_PANE_ID").ok(),
     );
     let herdr =
-        Herdr::new(env::var("HERDR_BIN_PATH").unwrap_or_else(|_| DEFAULT_HERDR.to_string()));
-    let action = navigate(pane.as_deref(), direction, |pane| herdr.is_nvim(pane));
-    herdr.execute(&action);
+        HerdrCli::new(env::var("HERDR_BIN_PATH").unwrap_or_else(|_| DEFAULT_HERDR.to_string()));
+    navigate(&herdr, pane.as_deref(), direction);
 }
