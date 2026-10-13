@@ -20,11 +20,10 @@ pub struct Result {
     pub calls: Vec<Vec<String>>,
 }
 
-struct OwnedChild(Child);
+struct ProcessGroup(Child);
 
-impl Drop for OwnedChild {
+impl Drop for ProcessGroup {
     fn drop(&mut self) {
-        // Only the process group created for this invocation belongs to this test.
         let _ = Command::new("/bin/kill")
             .args(["-KILL", "--", &format!("-{}", self.0.id())])
             .stdout(Stdio::null())
@@ -104,7 +103,7 @@ exit "${TEST_ACTION_STATUS-0}"
         self.command
             .stdout(File::create(self.root.join("stdout")).unwrap())
             .stderr(File::create(self.root.join("stderr")).unwrap());
-        let mut child = OwnedChild(self.command.spawn().unwrap());
+        let mut child = ProcessGroup(self.command.spawn().unwrap());
         let status = loop {
             if let Some(status) = child.0.try_wait().unwrap() {
                 break status;
