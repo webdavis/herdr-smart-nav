@@ -1,6 +1,3 @@
-/// Resolve the pane to act on. A plugin action receives HERDR_PANE_ID; the old
-/// shell keybinding (and manual use) set HERDR_ACTIVE_PANE_ID. Prefer the former,
-/// fall back to the latter, ignore empty strings.
 pub(crate) fn resolve_pane(pane_id: Option<String>, active: Option<String>) -> Option<String> {
     [pane_id, active]
         .into_iter()
