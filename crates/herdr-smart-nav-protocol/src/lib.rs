@@ -43,6 +43,8 @@ mod tests {
             r#"{"result":{"process_info":{"foreground_processes":"nvim"}}}"#,
             r#"{"result":{"process_info":{"foreground_processes":[{"name":42}]}}}"#,
             r#"{"error":{"message":"no such pane"}}"#,
+            r#"{"result":{"process_info":{"foreground_processes":[{"name":"/bin/nvim"}]}}}"#,
+            r#"{"result":{"process_info":{"foreground_processes":[{"name":"NVIM"}]}}}"#,
         ] {
             assert!(!is_nvim_foreground(answer), "{answer:?} read as the editor");
         }
