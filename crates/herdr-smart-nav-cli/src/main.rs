@@ -8,7 +8,7 @@ mod pane;
 
 const DEFAULT_HERDR: &str = "herdr";
 
-const USAGE: &str = "herdr-smart-nav: usage: herdr-smart-nav left|down|up|right";
+const USAGE: &str = "usage: herdr-smart-nav left|down|up|right";
 
 fn main() {
     let word = env::args_os()

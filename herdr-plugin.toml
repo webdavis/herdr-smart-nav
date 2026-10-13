@@ -10,20 +10,20 @@ command = ["cargo", "build", "--release", "--locked"]
 
 [[actions]]
 id = "nav_left"
-title = "Nav left (Neovim split or herdr pane)"
+title = "Move left across Neovim splits and herdr panes"
 command = ["./target/release/herdr-smart-nav", "left"]
 
 [[actions]]
 id = "nav_down"
-title = "Nav down (Neovim split or herdr pane)"
+title = "Move down across Neovim splits and herdr panes"
 command = ["./target/release/herdr-smart-nav", "down"]
 
 [[actions]]
 id = "nav_up"
-title = "Nav up (Neovim split or herdr pane)"
+title = "Move up across Neovim splits and herdr panes"
 command = ["./target/release/herdr-smart-nav", "up"]
 
 [[actions]]
 id = "nav_right"
-title = "Nav right (Neovim split or herdr pane)"
+title = "Move right across Neovim splits and herdr panes"
 command = ["./target/release/herdr-smart-nav", "right"]
