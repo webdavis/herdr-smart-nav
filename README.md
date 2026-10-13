@@ -30,6 +30,21 @@ Then bind the four actions in `~/.config/herdr/config.toml`:
 key = "ctrl+h"
 type = "plugin_action"
 command = "herdr-smart-nav.nav_left"
+
+[[keys.command]]
+key = "ctrl+j"
+type = "plugin_action"
+command = "herdr-smart-nav.nav_down"
+
+[[keys.command]]
+key = "ctrl+k"
+type = "plugin_action"
+command = "herdr-smart-nav.nav_up"
+
+[[keys.command]]
+key = "ctrl+l"
+type = "plugin_action"
+command = "herdr-smart-nav.nav_right"
 ```
 
 The Neovim side is [smart-splits.nvim](https://github.com/mrjones2014/smart-splits.nvim) with the

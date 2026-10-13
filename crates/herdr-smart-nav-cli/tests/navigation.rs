@@ -15,10 +15,7 @@ fn non_unicode_direction_is_usage_without_invoking_herdr() {
     let result = fixture.run();
     assert_eq!(result.status.code(), Some(2), "{}", result.stderr);
     assert_eq!(result.stdout, "");
-    assert_eq!(
-        result.stderr,
-        "herdr-smart-nav: usage: herdr-smart-nav left|down|up|right\n"
-    );
+    assert_eq!(result.stderr, "usage: herdr-smart-nav left|down|up|right\n");
     assert!(result.calls.is_empty());
 }
 
@@ -48,10 +45,7 @@ fn invalid_arguments_print_usage_without_invoking_herdr() {
         let result = Fixture::new(&args).run();
         assert_eq!(result.status.code(), Some(2));
         assert_eq!(result.stdout, "");
-        assert_eq!(
-            result.stderr,
-            "herdr-smart-nav: usage: herdr-smart-nav left|down|up|right\n"
-        );
+        assert_eq!(result.stderr, "usage: herdr-smart-nav left|down|up|right\n");
         assert!(result.calls.is_empty());
     }
 }
