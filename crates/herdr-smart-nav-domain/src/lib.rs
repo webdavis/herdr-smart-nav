@@ -7,14 +7,12 @@ pub enum Direction {
 }
 
 impl Direction {
+    const ALL: [Direction; 4] = [Self::Left, Self::Down, Self::Up, Self::Right];
+
     pub fn parse(word: &str) -> Option<Self> {
-        match word {
-            "left" => Some(Direction::Left),
-            "down" => Some(Direction::Down),
-            "up" => Some(Direction::Up),
-            "right" => Some(Direction::Right),
-            _ => None,
-        }
+        Self::ALL
+            .into_iter()
+            .find(|direction| direction.as_str() == word)
     }
 
     pub fn chord(self) -> &'static str {
