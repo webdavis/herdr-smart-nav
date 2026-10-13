@@ -1,10 +1,17 @@
 use std::env;
 
-use herdr_smart_nav_adapters::HerdrCli;
-use herdr_smart_nav_application::navigate;
-use herdr_smart_nav_domain::Direction;
+use direction::Direction;
+use herdr::navigate;
+use herdr_cli::HerdrCli;
 
+mod decision;
+mod direction;
+#[cfg(test)]
+mod fake_herdr;
+mod herdr;
+mod herdr_cli;
 mod pane;
+mod process_info;
 
 const DEFAULT_HERDR: &str = "herdr";
 

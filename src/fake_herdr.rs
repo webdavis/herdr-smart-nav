@@ -1,6 +1,6 @@
 use std::cell::RefCell;
 
-use herdr_smart_nav_application::Herdr;
+use crate::herdr::Herdr;
 
 pub struct FakeHerdr {
     runs_nvim: bool,

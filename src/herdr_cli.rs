@@ -1,7 +1,7 @@
 use std::process::Command;
 
-use herdr_smart_nav_application::Herdr;
-use herdr_smart_nav_protocol::is_nvim_foreground;
+use crate::herdr::Herdr;
+use crate::process_info::is_nvim_foreground;
 
 pub struct HerdrCli {
     binary: String,
