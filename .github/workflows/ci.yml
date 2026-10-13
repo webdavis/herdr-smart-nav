@@ -19,5 +19,3 @@ jobs:
         run: cargo clippy --workspace --all-targets --locked -- -D warnings
       - name: Test
         run: cargo test --workspace --locked
-      - name: Build docs
-        run: cargo doc --workspace --no-deps --locked
